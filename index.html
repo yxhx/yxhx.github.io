@@ -2,21 +2,46 @@
 layout: default
 ---
 
-<div class="home">
+<div class="home">  
 
-  <h1 class="page-heading">Posts</h1>
+  <div class="index-intro">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+
+  <div class="wrapper">
+    <div class="page-col-wrapper">
+      <div class="page-col  page-col-1">
+        <h1 class="page-heading">最新资讯</h1>
+        <ul class="post-list">
+          {% for post in site.categories.news limit:5 %}
+            <li>
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+              <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h2>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="page-col  page-col-2">
+        <h1 class="page-heading">最新活动</h1>
+        <ul class="post-list">
+          {% for post in site.categories.activity limit:5 %}
+            <li>
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+              <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h2>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
