@@ -9,6 +9,8 @@ download-url-android: http://file.lesafe.net/
 
 <div class="home">
 
+  <div class="algin-center"><font color="red">客户端暂未准备好，请耐心等待。</font></div>
+
   <!--  游戏下载  -->
   <div class="wrapper">
     
