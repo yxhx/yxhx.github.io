@@ -1,8 +1,8 @@
 ---
 layout: discuss
-title: 交流讨论
+title: 讨论
 permalink: /discuss/
-id: 4
+id: 3
 ---
 
 说点什么吧

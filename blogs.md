@@ -1,16 +1,14 @@
 ---
 layout: page
-title: 新闻公告
-permalink: /news/
+title: 开发日志
+permalink: /blogs/
 id: 1
 ---
 
-<div class="home">
-
-  <h1 class="page-heading">新闻公告</h1>
+<div class="home">  
 
   <ul class="post-list">
-    {% for post in site.categories.news %}
+    {% for post in site.categories.blogs %}
       <li>       
 
         <h2>

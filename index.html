@@ -1,63 +1,24 @@
 ---
 layout: default
-download-url-pc: http://file.lesafe.net/yxhx2.0.rar
-download-url-android: http://file.lesafe.net/yxhx2.0.apk
 ---
 
 <div class="home">  
 
-  <!--  游戏介绍  -->
-  <div class="wrapper">
-    <h1 class="algin-center">游戏介绍</h1>
-    <div class="index-box">
-      <p>《异星幻想II》是乐赛孚多年来全力打造的新魔幻题材 3D MMORPG 又一革新力作，其底蕴深厚的文明背景，复杂多变的势力关系，个性鲜明的阵营分类，展现了未来世界的矛盾冲突与和平展望！游戏拥有多样的玩法设计、精美的画面呈现，以及千余宏伟华丽的3D场景，玩家可自由PK、尽情体验不同阵营多种职业间的激情战斗乐趣！百种华丽技能、独特的英雄争霸赛、公会家园系统、更有人头过百的倒塔公会战，万人汇聚的城市争夺战，只为成就你的一世霸业！</p>
-    </div>
-  </div>
+  <h1 class="page-heading">开发日志</h1>
 
-  <!--  游戏下载  -->
-  <div class="wrapper">
-    <h1 class="algin-center">游戏下载</h1>
-    <div class="index-box">
-      <div class="page-col-wrapper">      
-        <div class="page-col  page-col-1">
-          <a href="{{ page.download-url-pc }}" target="_blank"><img src="/images/pc.png"/></a>
-          <div class="algin-center">微端版</div>
+  <ul class="post-list">
+    {% for post in site.categories.blogs limit:3 %}
+      <li>       
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+        <div>
+          {{ post.content }}
         </div>
-
-        <div class="page-col  page-col-2">
-          <a href="{{ page.download-url-android }}" target="_blank"><img src="/images/android.png"/></a>
-          <div class="algin-center">安卓版</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="wrapper">    
-    <div class="page-col-wrapper">
-      <div class="page-col  page-col-1">
-        <h1 class="page-heading">最新资讯</h1>
-        <ul class="post-list">
-          {% for post in site.categories.news limit:5 %}
-            <li>
-              <span class="post-meta">{{ post.date | date: "(%Y-%m-%d) " }}</span>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>              
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="page-col  page-col-2">       
-        <h1 class="page-heading">最新活动</h1> 
-        <ul class="post-list">
-          {% for post in site.categories.activity limit:5 %}
-            <li>
-              <span class="post-meta">{{ post.date | date: "(%Y-%m-%d) " }}</span>
-              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>              
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
+      </li>
+    {% endfor %}
+  </ul>
 
 </div>
