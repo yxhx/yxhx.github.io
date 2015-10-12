@@ -9,7 +9,7 @@ download-url-android: http://file.lesafe.net/yxhx2.0.apk
 
 <div class="home">
 
-  <div class="algin-center">最新版本发布于 2015/10/12 版本2.0 构建号 51008 </div>
+  <div class="algin-center">首次测试已结束，暂停客户端下载</div>
 
   <!--  游戏下载  -->
   <div class="wrapper">
