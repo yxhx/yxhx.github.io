@@ -265,6 +265,11 @@
             font-size: 18px;
         }
     }
+
+    p {
+        text-indent: 2em;
+        margin: 0px;
+    }
 }
 
 /**
@@ -276,10 +281,6 @@
     padding: 20px;    
 }
 
-.index-box p {
-    text-indent: 2em;
-    margin: 0px;
-}
 
 .index-box img {
     display:block; 
