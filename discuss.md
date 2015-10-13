@@ -5,4 +5,9 @@ permalink: /discuss/
 id: 3
 ---
 
-说点什么吧
+随便说点什么吧，要不加个微信关注一下呗
+<div>
+	<div class="align-center">
+	<img src="/images/qr.jpg"/>
+	</div>
+</div>
