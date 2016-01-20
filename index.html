@@ -2,35 +2,389 @@
 layout: default
 ---
 
-<div class="home">  
-
-  <h1 class="page-heading">开发日志</h1>  
-
-  <ul class="post-list">
-    {% for post in site.categories.blogs limit:1 %}
-      <li>       
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <div>
-          {{ post.content }}
+    <div id="pc" style="display: block;">
+        <div id="header" style="width: 100%; top: 0px; left: 0px;">
+            <div class="wrap" style="width: 1068px;">
+                <h1><span><img src="/images/logo.png" alt=""></span></h1>
+                <ul class="nav" id="nav">
+                    <li class="on"><a onclick="pageMove(0)"><span><img src="/images/nav1.png" alt=""></span></a></li>
+                    <li class=""><a onclick="pageMove(1)"><span><img src="/images/nav3.png" alt=""></span></a></li>
+                    <li class=""><a onclick="pageMove(2)"><span><img src="/images/nav4.png" alt=""></span></a></li>
+                    <li class=""><a onclick="pageMove(3)"><span><img src="/images/nav5.png" alt=""></span></a></li>
+                </ul>
+                <div class="btn_share"></div>
+            </div>
+            <div id="topbar">
+                <div class="wrap" style="margin: 0px 0px 0px -413px; left: 50%; position: relative;">
+                    <a class="tail" onclick="showHideNav(this)" style="left: 946px;"></a>
+                    <a onclick="playstore()" class="btn_google"><img src="/images/btn_google.png" alt="googlePlay"></a>
+                    <a onclick="appstore()" class="btn_apple"><img src="/images/btn_appstore.png" alt="appStore"></a>
+                </div>
+            </div>
         </div>
-      </li>
-    {% endfor %}
-  </ul>
+        <div id="sidenav">
+            <a onclick="showMoviePop(&#39;2n5i7T4mQXc&#39;,0)" class="btn_mov"><img src="/images/sidenav_mov.png" alt=""></a>
+            <a onclick="goCafe()" class="btn_forum"><img src="/images/sidenav_forum.png" alt=""></a>
+            <ul>
+                <li class="on"><a onclick="pageMove(0)"></a></li>
+                <li class=""><a onclick="pageMove(1)"></a></li>
+                <li class=""><a onclick="pageMove(2)"></a></li>
+                <li class=""><a onclick="pageMove(3)"></a></li>
+            </ul>
+            <a onclick="pageMove(0)" class="btn_top"><img src="/images/sidenav_top.png" alt=""></a>
+        </div>
+        <div id="wrapper" style="width: 100%; padding-top: 905px;">
+            <div id="main" class="sections" style="width: 1663px; height: 905px;">
+                <div id="video-bg" style="top: 0px;">
+                </div>
+                <div class="dotbg">
+                    <div class="wrap" style="top: 0px;">
+                        <h1><img src="/images/main_title.png"></h1>                        
+                    </div>
+                </div>
+            </div>
 
-  <ul class="post-list">
-    {% for post in site.categories.blogs limit:6 offset:1 %}
-      <li>       
+            <div id="characters">
+                <div id="charactersWrap">
+                    <div id="characters_center" style="left: 0px;">
+                        <div class="leftbg">
+                            <img src="/images/char_bg_l.png" alt="" id="charLeftBg" style="right: -106.597px;">
+                        </div>
+                        <div class="rightbg">
+                            <img src="/images/char_bg_r.png" alt="" id="charRightBg" style="left: -73.8701px; margin-left: 0px;">
+                        </div>
+                        <div class="wrap">
+                            <a onclick="charViewGoTo(1)" class="btn_char_l"><img src="/images/btn_charmore_l.png" alt=""></a>
+                            <a onclick="charViewGoTo(2)" class="btn_char_r"><img src="/images/btn_charmore_r.png" alt="" style="left: 0px;"></a>
+                        </div>
+                    </div>
+                    <div id="characters_left" style="left: -1663px;">
+                        <div class="bg"></div>
+                        <div class="characters">
+                            <img src="/images/char_l.png" alt="" class="imgs" style="width: 1812px; margin-left: -906px; height: auto; margin-top: -500px;">
+                            <div class="btngroup" style="width: 1812px; margin-left: -906px; height: 500px; margin-top: -500px;">
+                                <a onclick="charPop(1)" class="btn_char char1"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(3)" class="btn_char char2"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(5)" class="btn_char char3"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(4)" class="btn_char char4"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(2)" class="btn_char char5"><img src="/images/btn_char.gif" alt=""></a>
+                            </div>
+                            <a onclick="charViewGoTo(0)" class="slider" style="margin-left: 648.57px;"><img src="/images/btn_toright.png"></a>
+                            <a class="btn_story" onclick="charStoryPop(1)"><img src="/images/btn_char_l.gif" alt=""></a>
+                        </div>
+                        <div id="storypop1" class="storypop" style="display: none;">
+                            <img src="/images/pop_char_l.jpg" alt="">
+                            <a onclick="charStoryPop()" class="btn_quit"><img src="/images/btn_quit.gif"></a>
+                        </div>
+                        <div id="characterpop1" class="charpop">
+                            <div class="sliders index1">
+                                <img src="/images/chargroup1_1.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(5)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(2)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index2">
+                                <img src="/images/chargroup1_5.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(1)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(3)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index3">
+                                <img src="/images/chargroup1_2.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(2)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(4)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index4">
+                                <img src="/images/chargroup1_4.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(3)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(5)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index5">
+                                <img src="/images/chargroup1_3.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(4)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(1)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <a onclick="hideCharPop()" class="btn_quit"><img src="/images/btn_quit.gif"></a>
+                        </div>
+                    </div>
+                    <div id="characters_right" style="left: 1663px;">
+                        <div class="bg"></div>
+                        <div class="characters">
+                            <img src="/images/char_r.png" alt="" class="imgs" style="width: 1812px; margin-left: -906px; height: auto; margin-top: -500px;">
+                            <div class="btngroup" style="width: 1812px; margin-left: -906px; height: 500px; margin-top: -500px;">
+                                <a onclick="charPop(6)" class="btn_char char1"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(7)" class="btn_char char2"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(9)" class="btn_char char3"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(10)" class="btn_char char4"><img src="/images/btn_char.gif" alt=""></a>
+                                <a onclick="charPop(8)" class="btn_char char5"><img src="/images/btn_char.gif" alt=""></a>
+                            </div>
+                            <a onclick="charViewGoTo(0)" class="slider" style="margin-left: -648.57px;"><img src="/images/btn_toleft.png"></a>
+                            <a class="btn_story" onclick="charStoryPop(2)"><img src="/images/btn_char_r.gif" alt=""></a>
+                        </div>
+                        <div id="storypop2" class="storypop" style="display: none;">
+                            <img src="/images/pop_char_r.jpg" alt="">
+                            <a onclick="charStoryPop()" class="btn_quit"><img src="/images/btn_quit.gif"></a>
+                        </div>
+                        <div id="characterpop2" class="charpop">
+                            <div class="sliders index6">
+                                <img src="/images/chargroup2_1.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(10)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(7)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index7">
+                                <img src="/images/chargroup2_2.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(6)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(8)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index8">
+                                <img src="/images/chargroup2_5.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(7)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(9)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index9">
+                                <img src="/images/chargroup2_3.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(8)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(10)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <div class="sliders index10">
+                                <img src="/images/chargroup2_4.jpg" alt="" class="charimg" style="width: 1370px; margin-left: -685px; margin-top: -540px;">
+                                <a class="slide_prev" onclick="charPop(9)"><img src="/images/prev_slider.png" alt="向前"></a>
+                                <a class="slide_next" onclick="charPop(6)"><img src="/images/next_slider.png" alt="向后"></a>
+                            </div>
+                            <a onclick="hideCharPop()" class="btn_quit"><img src="/images/btn_quit.gif"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="characters_pager">
+                    <a onclick="charViewGoTo(1)"></a>
+                    <a onclick="charViewGoTo(0)" class="on"></a>
+                    <a onclick="charViewGoTo(2)"></a>
+                </div>
+            </div>
+            <div id="section2" class="sections">
+                <div class="title"><img src="/images/tit_sect2.gif" alt="" style="width: 1920px; margin-left: -960px;"></div>
+                <div class="blocks">
+                    <ul class="top">
+                        <li class="tiles"><a onclick="showMoviePop(&#39;Fd6vmy_JWLQ&#39;,2)"><span class="wrapper"><img src="/images/sect2_mov1.jpg" class="bg" alt=""><img src="/images/sect2_mov1_on.jpg" alt="" class="bgon"></span><span class="txt" style="height: 152px; width: 100%; margin-left: -278px;"><img src="/images/sect2_mov1_txt.png" alt=""></span></a></li>
+                        <li class="tiles center"><a onclick="showMoviePop(&#39;boq379vgt0M&#39;,2)"><span class="wrapper"><img src="/images/sect2_mov2.jpg" class="bg" alt=""><img src="/images/sect2_mov2_on.jpg" alt="" class="bgon" style="opacity: 0; width: 640px; margin-left: -320px;"></span><span class="txt" style="height: 152px; width: 100%; margin-left: -278px;"><img src="/images/sect2_mov2_txt.png" alt=""></span></a></li>
+                        <li class="tiles"><a onclick="showMoviePop(&#39;P6pTj7Mx1Mc&#39;,2)"><span class="wrapper"><img src="/images/sect2_mov3.jpg" class="bg" alt=""><img src="/images/sect2_mov3_on.jpg" alt="" class="bgon"></span><span class="txt" style="height: 152px; width: 100%; margin-left: -278px;"><img src="/images/sect2_mov3_txt.png" alt=""></span></a></li>
+                    </ul>
+                    <ul class="bottom">
+                        <li class="tiles color1"><div><span class="txt"><img src="/images/sect2_tile1.png" alt="" style="width: 100%; margin-top: -152px; margin-left: -208px;"></span></div></li>
+                        <li class="tiles color2"><div><span class="txt"><img src="/images/sect2_tile2.png" alt="" style="width: 100%; margin-top: -152px; margin-left: -208px;"></span></div></li>
+                        <li class="tiles color3"><div><span class="txt"><img src="/images/sect2_tile3.png" alt="" style="width: 100%; margin-top: -152px; margin-left: -208px;"></span></div></li>
+                        <li class="tiles color4"><div><span class="txt"><img src="/images/sect2_tile4.png" alt="" style="width: 100%; margin-top: -152px; margin-left: -208px;"></span></div></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="section3" class="sections">
+                <div class="title"><img src="/images/tit_sect3.gif" alt="" style="width: 1920px; margin-left: -960px;"></div>
+                <div class="blocks">
+                    <ul class="left">
+                        <li class="tiles">
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile1.jpg" class="bg" alt="" style=""><img src="/images/sect3_tile1_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(0)"><span class="txt"><img src="/images/sect3_text1.png" alt=""></span></a>
+                            </span>
+                        </li>
+                        <li class="tiles">
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile2.jpg" class="bg" alt="" style=""><img src="/images/sect3_tile2_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(1)"><span class="txt"><img src="/images/sect3_text2.png" alt=""></span></a>
+                            </span>
+                        </li>
+                    </ul>
+                    <ul class="right">
+                        <li class="tiles">
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile3.jpg" alt="" class="bg" style=""><img src="/images/sect3_tile3_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(2)" class="btn1"><span class="txt"><img src="/images/sect3_text3_1.png" alt=""></span></a>
+                                <a onclick="moveTodungeon(3)" class="btn2"><span class="txt"><img src="/images/sect3_text3_2.png" alt=""></span></a>
+                            </span>
+                        </li>
+                        <li class="tiles">
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile4.jpg" alt="" class="bg" style=""><img src="/images/sect3_tile4_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(4)" class="btn1"><span class="txt"><img src="/images/sect3_text4_1.png" alt=""></span></a>
+                                <a onclick="moveTodungeon(5)" class="btn2"><span class="txt"><img src="/images/sect3_text4_2.png" alt=""></span></a>
+                            </span>
+                        </li>
+                        <li class="tiles tile2">
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile5.jpg" alt="" class="bg" style=""><img src="/images/sect3_tile5_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(6)"><span class="txt"><img src="/images/sect3_text5.png" alt=""></span></a>
+                            </span>
+                            <span class="wrapper">
+                                <img src="/images/sect3_tile6.jpg" alt="" class="bg" style=""><img src="/images/sect3_tile6_on.jpg" class="bgon" alt="" style="">
+                                <a onclick="moveTodungeon(7)"><span class="txt"><img src="/images/sect3_text6.png" alt=""></span></a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dungeonPop" id="dungeonPop">
+                    <div class="dun_slider" id="dun_slider">
+                        <div class="dungeons" id="dungeons1" style="position: absolute; top: 0px; left: 0px; display: block; z-index: 9; opacity: 1;"><img src="/images/world1.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons2" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 7; opacity: 0;"><img src="/images/world2.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons3" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 6; opacity: 0;"><a class="btn" onclick="moveTodungeon(3)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/world3_1.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons4" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 5; opacity: 0;"><a class="btn" onclick="moveTodungeon(2)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/world3_2.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons5" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 4; opacity: 0;"><a class="btn" onclick="moveTodungeon(5)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/world4_1.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons6" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 3; opacity: 0;"><a class="btn" onclick="moveTodungeon(4)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/world4_2.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons7" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 2; opacity: 0;"><img src="/images/world5.jpg" alt=""></div>
+                        <div class="dungeons" id="dungeons8" style="position: absolute; top: 0px; left: 0px; display: none; z-index: 1; opacity: 0;"><img src="/images/world6.jpg" alt=""></div>
+                        <a id="dun_prev"><img src="/images/prev_slider.png" alt=""></a>
+                        <a id="dun_next"><img src="/images/next_slider.png" alt=""></a>
+                        <div id="dun_navs"><a href="https://fwar.nexon.com/MicroTw?channel=1#">1</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">2</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">3</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">4</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">5</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">6</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">7</a><a href="https://fwar.nexon.com/MicroTw?channel=1#">8</a></div>
+                        <div id="dun_nav">
+                            <a onclick="moveTodungeon(0)" class="dun1nav on"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                            <a onclick="moveTodungeon(1)" class="dun2nav"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                            <a onclick="moveTodungeon(2)" class="dun3nav"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                            <a onclick="moveTodungeon(4)" class="dun4nav"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                            <a onclick="moveTodungeon(6)" class="dun5nav"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                            <a onclick="moveTodungeon(7)" class="dun6nav"><img src="/images/slidenav.gif" alt=""><span class="btmbox"></span></a>
+                        </div>
+                        <a onclick="hideDunPop()" class="btn_quit"><img src="/images/btn_quit.gif"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <img src="/images/footer.gif" alt="" class="bg">
+            <div class="footerbtn">
+                <a onclick="footerLink(1)"><img src="/images/footer_btn.gif" alt=""></a>
+                <a onclick="footerLink(2)"><img src="/images/footer_btn.gif" alt=""></a>
+                <a onclick="footerLink(3)"><img src="/images/footer_btn.gif" alt=""></a>
+            </div>
+        </div>
+    </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      </li>
-    {% endfor %}
-  </ul>
+    <div id="mobile">
+        <div id="m_main" style="height: 2844px;">
+            <div class="mcontainer">
+                <img src="/images/main.jpg" alt="" class="bgimg">
+                <div class="mwrap">
+                    <img src="/images/main.png" alt="" class="bgimg">
+                    <div class="btm">
+                        <a onclick="playstore()" class="googleBtn forPC"><img src="/images/btn_google.png" alt=""></a>
+                        <a onclick="appstore()" class="appleBtn forPC"><img src="/images/btn_appstore.png" alt=""></a>
+                        <a onclick="showMoviePop(&#39;2n5i7T4mQXc&#39;,0)" class="playbtn"><img src="/images/btn_play.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</div>
+        <div id="m_characters">
+            <img src="/images/char_bg.gif" class="bgimg">
+            <div class="mwrap">
+                <div id="m_characterpop" class="mcharpop swiper-container swiper-container-horizontal">
+                    <div class="swiper-wrapper">
+                        <div class="msliders swiper-slide swiper-slide-active"><img src="/images/char_lord3.jpg" alt="" class="mcharimg"><a onclick="mySwiperC.slideTo(7);" class="endbtn lord"><img src="/images/btn_end_lord.png" alt="처음으로"></a></div>
+                        <div class="msliders swiper-slide swiper-slide-next"><img src="/images/char_lord4.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_lord5.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_lord2.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_lord1.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/story_lord.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_lord.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_index.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/story_world.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world1.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world2.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world3.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world4.jpg" alt="" class="mcharimg"></div>
+                        <div class="msliders swiper-slide"><img src="/images/char_world5.jpg" alt="" class="mcharimg"><a onclick="mySwiperC.slideTo(7);" class="endbtn world"><img src="/images/btn_end_world.png" alt="처음으로"></a></div>
+                    </div>
+                    <a class="mslide_prev swiper-button-prev swiper-button-disabled"><img src="/images/btn_popleft.png" alt="向前"></a>
+                    <a class="mslide_next swiper-button-next swiper-button-disabled"><img src="/images/btn_popright.png" alt="向后"></a>
+                </div>
+            </div>
+        </div>
+        <div id="m_sect2">
+            <img src="/images/sect3_title.gif" alt="" class="bgimg">
+            <a class="movbtns" onclick="showMoviePop(&#39;Fd6vmy_JWLQ&#39;,2)"><img src="/images/tile_sect2_1.jpg"><span class="overimg"><img src="/images/tile_sect2_1on.jpg"></span></a>
+            <a class="movbtns" onclick="showMoviePop(&#39;boq379vgt0M&#39;,2)"><img src="/images/tile_sect2_2.jpg"><span class="overimg"><img src="/images/tile_sect2_2on.jpg"></span></a>
+            <a class="movbtns" onclick="showMoviePop(&#39;P6pTj7Mx1Mc&#39;,2)"><img src="/images/tile_sect2_3.jpg"><span class="overimg"><img src="/images/tile_sect2_3on.jpg"></span></a>
+            <img src="/images/tile_colors.jpg" alt="" class="bgimg">
+        </div>
+        <div id="m_sect3">
+            <img src="/images/sect4_title.gif" alt="" class="bgimg">
+            <div class="mcontainer">
+                <img src="/images/sect4_bg.gif" alt="" class="bgimg">
+                <div class="mwrap swiper-container swiper-container-horizontal" id="m_dun_slider">
+                    <div class="swiper-wrapper"><div class="m_dungeons swiper-slide swiper-slide-duplicate swiper-slide-active" id="m_dungeons8" data-swiper-slide-index="7"><img src="/images/dunpop6.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide swiper-slide-next" id="m_dungeons1" data-swiper-slide-index="0"><img src="/images/dunpop1.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons2" data-swiper-slide-index="1"><img src="/images/dunpop2.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons3" data-swiper-slide-index="2"><a class="btn" onclick="moveToMdungeon(3)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/dunpop3_1.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons4" data-swiper-slide-index="3"><a class="btn" onclick="moveToMdungeon(2)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/dunpop3_2.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons5" data-swiper-slide-index="4"><a class="btn" onclick="moveToMdungeon(5)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/dunpop4_1.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons6" data-swiper-slide-index="5"><a class="btn" onclick="moveToMdungeon(4)"><img src="/images/btn_dungeon.gif" alt=""></a><img src="/images/dunpop4_2.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons7" data-swiper-slide-index="6"><img src="/images/dunpop5.jpg" alt="" class="bgimg"></div>
+                        <div class="m_dungeons swiper-slide" id="m_dungeons8" data-swiper-slide-index="7"><img src="/images/dunpop6.jpg" alt="" class="bgimg"></div>
+                    <div class="m_dungeons swiper-slide swiper-slide-duplicate" id="m_dungeons1" data-swiper-slide-index="0"><img src="/images/dunpop1.jpg" alt="" class="bgimg"></div></div>
+                    <a id="m_dun_prev" class="swiper-button-prev"><img src="/images/btn_popleft.png" alt=""></a>
+                    <a id="m_dun_next" class="swiper-button-next"><img src="/images/btn_popright.png" alt=""></a>
+                    <div id="m_dun_nav">
+                        <a onclick="moveToMdungeon(0)" class="on"><img src="/images/dunpop_nav1.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav1_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav1_on.gif" alt=""></span></a>
+                        <a onclick="moveToMdungeon(1)"><img src="/images/dunpop_nav2.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav2_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav2_on.gif" alt=""></span></a>
+                        <a onclick="moveToMdungeon(2)"><img src="/images/dunpop_nav3.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav3_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav3_on.gif" alt=""></span></a>
+                        <a onclick="moveToMdungeon(4)"><img src="/images/dunpop_nav4.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav4_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav4_on.gif" alt=""></span></a>
+                        <a onclick="moveToMdungeon(6)"><img src="/images/dunpop_nav5.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav5_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav5_on.gif" alt=""></span></a>
+                        <a onclick="moveToMdungeon(7)"><img src="/images/dunpop_nav6.gif" alt=""><span class="overimg"><img src="/images/dunpop_nav6_o.gif" alt=""></span><span class="actimg"><img src="/images/dunpop_nav6_on.gif" alt=""></span></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="mfooter">
+            <img src="/images/footer(1).gif" alt="" class="bgimg">
+            <img src="/images/header_bg.png" alt="" class="bgimg">
+            <div class="footerbtn">
+                <a onclick="footerLink(1)"><img src="/images/footer_btn.gif" alt=""></a>
+                <a onclick="footerLink(2)"><img src="/images/footer_btn.gif" alt=""></a>
+                <a onclick="footerLink(3)"><img src="/images/footer_btn.gif" alt=""></a>
+            </div>
+        </div>
+        <div id="mheader">
+            <img src="/images/header_bg.png" alt="" class="bgimg">
+            <div class="mwrap">
+                <img src="/images/nav_blank.gif" alt="" class="blank">
+                <ul id="mnav">
+
+                    <li><a onclick="mPageMove(1)"><img src="/images/nav2_off.png" alt=""><span class="overimg"><img src="/images/nav2_on.png" alt=""></span></a></li>
+                    <li><a onclick="mPageMove(2)" class="on"><img src="/images/nav3_off.png" alt=""><span class="overimg"><img src="/images/nav3_on.png" alt=""></span></a></li>
+                    <li><a onclick="goCafe()"><img src="/images/nav4_off.png" alt=""><span class="overimg"><img src="/images/nav4_on.png" alt=""></span></a></li>
+                </ul>
+                <div class="sharbtns">
+                    <a onclick="snsLink(&#39;facebook&#39;)"><img src="/images/nav_share.png" alt=""></a>
+                </div>
+            </div>
+            <a onclick="mPageMove(0)" id="btn_mtop"><img src="/images/btn_top.png" alt=""></a>
+        </div>
+    </div>
+    <div id="dim">
+    </div>
+    <div id="moviePop" style="width: 998px; margin-left: -499px; height: 561px; margin-top: -281px;">
+        <img src="/images/mov_bg.gif" alt="" class="bg">
+        <div class="movwrap">
+            <iframe frameborder="0" id="movie-obj" src="" allowfullscreen=""></iframe>
+            <a class="btn_quit" style="width: 67px; right: -68px; top: -1px;"><img src="/images/btn_quit.gif"></a>
+        </div>
+    </div>
+    <!--준비중입니다.-->
+    <div id="alert_preparing" class="alertPop">
+        <img src="/images/alert_preparing.jpg" class="txt" alt="준비중입니다.">
+        <a onclick="hideAlert(&#39;alert_preparing&#39;)" class="btn"><img src="/images/alert_ok.gif" alt="확인"></a>
+    </div>
+
+
+<script type="text/javascript">
+
+    function trackOutboundLink_new(menu) {
+        ga('send', 'event', menu, 'click', menu);
+    }
+
+    function trackOutboundLink_current(menu, url) {
+        ga('send', 'event', menu, 'click', url, {
+            'hitCallback':
+                function () { document.location = url; }
+        });
+    }
+
+</script>
