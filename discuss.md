@@ -1,11 +1,11 @@
 ---
 layout: discuss
-title: 讨论
+title: 交流讨论
 permalink: /discuss/
-id: 3
+id: 4
 ---
 
-随便说点什么吧，要不加个微信关注一下呗
+有意见提意见，没事点个赞吧
 <div>
 	<div class="align-center">
 	<img src="/images/qr.jpg"/>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 开发日志
+title: 游戏日志
 permalink: /blogs/
 id: 1
 ---
