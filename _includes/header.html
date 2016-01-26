@@ -14,6 +14,7 @@
       </a>
 
       <div class="trigger">
+        <a href="{{site.baseurl}}/">官网首页</a>
         {% assign sorted_pages = (site.pages | sort: 'id') %}
         {% for page in sorted_pages %}
           {% if page.title %}
@@ -28,5 +29,5 @@
 </header>
 
 <div class="header-image">
-  <img src="/images/slogon.png">
+  <img src="/images/header.jpg">
 </div>

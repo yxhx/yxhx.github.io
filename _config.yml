@@ -12,3 +12,4 @@ port: 4000
 
 # Build settings
 markdown: kramdown
+excerpt_separator: <!--more-->

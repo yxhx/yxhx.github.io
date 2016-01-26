@@ -4,7 +4,7 @@ layout: default
 
 <div class="home">  
 
-  <h1 class="page-heading">开发日志</h1>  
+  <h1 class="page-heading"></h1>  
 
   <ul class="post-list">
     {% for post in site.categories.blogs limit:1 %}
@@ -21,10 +21,29 @@ layout: default
     {% endfor %}
   </ul>
 
+  <div class="align-center">
+    <h1 class="page-heading">游戏新特色</h1>  
+  </div>
+
+  <div class="footer-col-wrapper">
+    {% for post in site.categories.features reversed %}
+      <div class="footer-col  footer-col-1">
+        <img src="{{post.picture}}">
+        <h3 class="align-center">
+          {{ post.title }}
+        </h3>
+        <span class="post-meta">{{ post.content }}</span>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="align-center">
+    <h1 class="page-heading">游戏日志</h1>  
+  </div>
+
   <ul class="post-list">
     {% for post in site.categories.blogs limit:6 offset:1 %}
-      <li>       
-
+      <li>
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
