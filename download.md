@@ -3,9 +3,6 @@ layout: page
 title: 游戏下载
 permalink: /download/
 id: 3
-download-url-pc:
-download-url-android: http://file.lesafe.net/yxhx2.0.000000.60128.apk
-download-url-ios:
 ---
 
 <div class="home">
@@ -28,8 +25,8 @@ download-url-ios:
           <div>程序版本：2.0.000000.60128</div>
           <div>更新日期：2016/1/27</div>
           <div>适配系统：Android 2.3 以上</div>
-          {% if page.download-url-android != nil and page.download-url-android != "" %}
-          <a href="{{ page.download-url-android }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
+          {% if site.download-url-android != nil and site.download-url-android != "" %}
+          <a href="{{ site.download-url-android }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
           {%  else %}
           <font color="red">暂未开放</font>
           {% endif %}
@@ -48,8 +45,8 @@ download-url-ios:
           <div>程序版本：2.0.000000.60128</div>
           <div>更新日期：2016/1/27</div>
           <div>适配系统：iOS 6.0 以上</div>
-          {% if page.download-url-ios != nil and page.download-url-ios != "" %}
-          <a href="{{ page.download-url-ios }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
+          {% if site.download-url-ios != nil and site.download-url-ios != "" %}
+          <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
           {%  else %}
           <font color="red">暂未开放</font>
           {% endif %}
@@ -67,9 +64,9 @@ download-url-ios:
         <div class="page-col  page-col-2">
           <div>程序版本：2.0.000000.60128</div>
           <div>更新日期：2016/1/27</div>
-          <div>适配系统：Windows xp/Vista/7/8/10</div>
-          {% if page.download-url-pc != nil and page.download-url-pc != "" %}
-          <a href="{{ page.download-url-pc }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
+          <div>适配系统：Windows XP/Vista/7/8/10</div>
+          {% if site.download-url-pc != nil and site.download-url-pc != "" %}
+          <a href="{{ site.download-url-pc }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
           {%  else %}
           <font color="red">暂未开放</font>
           {% endif %}

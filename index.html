@@ -42,14 +42,25 @@ layout: default
   </div>
 
   <ul class="post-list">
-    {% for post in site.categories.blogs limit:6 offset:1 %}
+    {% for post in site.categories.blogs limit:6 offset:0 %}
       <li>
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} <span class="post-meta">{{ post.date | date: "%Y/%m/%d" }}</span></a>
+        </h2>        
       </li>
     {% endfor %}
   </ul>
+
+
+  <div class="index-download"> 
+    {% if site.download-url-android != nil and site.download-url-android != "" %}
+    <a href="{{ site.download-url-android }}" target="_blank"><img src="/images/download_android.png"></a>
+    {% endif %}
+
+    {% if site.download-url-ios != nil and site.download-url-ios != "" %}
+    <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download_ios.png"></a>
+    {% endif %}
+
+  </div>
 
 </div>

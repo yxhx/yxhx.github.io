@@ -13,3 +13,8 @@ port: 4000
 # Build settings
 markdown: kramdown
 excerpt_separator: <!--more-->
+
+# Download settings
+download-url-pc: ""
+download-url-android: "http://file.lesafe.net/yxhx2.0.000000.60128.apk"
+download-url-ios: ""
