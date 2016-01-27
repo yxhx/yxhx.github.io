@@ -3,8 +3,8 @@ layout: page
 title: 游戏下载
 permalink: /download/
 id: 3
-download-url-pc: http://file.lesafe.net/yxhx2.0.rar
-download-url-android: http://file.lesafe.net/yxhx2.0.apk
+download-url-pc: http://file.lesafe.net/yxhx2.0.000000.60128.rar
+download-url-android: http://file.lesafe.net/yxhx2.0.000000.60128.apk
 ---
 
 <div class="home">
