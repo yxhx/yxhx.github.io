@@ -12,8 +12,8 @@ layout: default
 
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <span class="post-meta">- {{ post.date | date: "%Y/%m/%d" }}</span>
+        </h2>        
         <div>
           {{ post.content }}
         </div>
@@ -45,7 +45,7 @@ layout: default
     {% for post in site.categories.blogs limit:6 offset:0 %}
       <li>
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }} <span class="post-meta">{{ post.date | date: "%Y/%m/%d" }}</span></a>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}  <span class="post-meta"> - {{ post.date | date: "%Y/%m/%d" }}</span></a>
         </h2>        
       </li>
     {% endfor %}
