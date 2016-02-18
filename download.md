@@ -14,6 +14,7 @@ id: 3
   <!--  游戏下载  -->
   <div class="wrapper">
     
+    <hr class="top">
     <div class="index-box">
       <div class="page-col-wrapper">           
         <div class="page-col  page-col-1">
@@ -33,7 +34,10 @@ id: 3
         </div>
       </div>
     </div>
+    <hr class="bottom">
+    <br>
 
+    <hr class="top">
     <div class="index-box">
       <div class="page-col-wrapper">           
         <div class="page-col  page-col-1">
@@ -53,7 +57,10 @@ id: 3
         </div>
       </div>
     </div>
+    <hr class="bottom">
+    <br>
 
+    <hr class="top">
     <div class="index-box">
       <div class="page-col-wrapper">           
         <div class="page-col  page-col-1">
@@ -73,6 +80,8 @@ id: 3
         </div>
       </div>
     </div>
+    <hr class="bottom">
+    <br>
 
   </div>
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "职业属性"
 date:   2016-01-01 18:00:00
-categories: arts
+categories: arts_1
 ---
 
 <div class="post-content">	
