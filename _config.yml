@@ -15,6 +15,6 @@ markdown: kramdown
 excerpt_separator: <!--more-->
 
 # Download settings
-download-url-pc: "http://file.lesafe.net/yxhx2.zip"
-download-url-android: "http://file.lesafe.net/yxhx2.0.000000.60128.apk"
+download-url-pc: "http://file.lesafe.cn/yxhx2.zip"
+download-url-android: "http://file.lesafe.cn/yxhx2.0.000000.60128.apk"
 download-url-ios: ""
