@@ -20,7 +20,7 @@ id: 2
   </div>
 
   <div class="page-col page-col-2">
-  	<h3>游戏系统</h3>
+  	<h3>特色系统</h3>
     {% for post in site.categories.arts_2 %}
     <div>   
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
