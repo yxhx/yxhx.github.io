@@ -69,14 +69,15 @@ id: 3
         </div>
 
         <div class="page-col  page-col-2">
-          <div>程序版本：2.0.000000.60128</div>
-          <div>更新日期：2016/1/27</div>
+          <div>程序版本：1.23</div>
+          <div>更新日期：2015/7/16</div>
           <div>适配系统：iOS 6.0 以上</div>
           {% if site.download-url-ios != nil and site.download-url-ios != "" %}
           <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
           {%  else %}
           <font color="red">暂未开放</font>
           {% endif %}
+          <font color="red">注意：异星幻想2 苹果版本尚未发布，此版本为老版，用户不同服</font>
         </div>
       </div>
     </div>
