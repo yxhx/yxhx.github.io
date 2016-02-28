@@ -15,7 +15,10 @@ layout: default
           <span class="post-meta">- {{ post.date | date: "%Y/%m/%d" }}</span>
         </h2>        
         <div>
-          {{ post.content }}
+          {{ post.excerpt }}
+        </div>
+        <div style="text-align:right">
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">【阅读全文】</a>
         </div>
       </li>
     {% endfor %}
