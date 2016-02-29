@@ -9,6 +9,14 @@ id: 4
 <div>
 	<div class="align-center">
 		<hr class="top">
+		<div>QQ交流群</div>
+		<div style="color:red">277204286</div>
+		<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=b877c252a79a9c5ea1be3b83ef2cb88b4b198708ea0dcac57e2c1e6627e29130"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="异星幻想2推广群" title="异星幻想2推广群"></a>
+		<br><br>
+		<hr class="bottom">
+
+		<br>
+		<hr class="top">
 		<div>百度贴吧</div>
 		<a href="http://tieba.baidu.com/f?kw=异星幻想官方" target="_blank">异星幻想官方吧</a>
 		<br><br>
