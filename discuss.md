@@ -10,8 +10,8 @@ id: 4
 	<div class="align-center">
 		<hr class="top">
 		<div>QQ交流群</div>
-		<div style="color:red">277204286</div>
-		<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=b877c252a79a9c5ea1be3b83ef2cb88b4b198708ea0dcac57e2c1e6627e29130"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="异星幻想2推广群" title="异星幻想2推广群"></a>
+		<div style="color:red">545356038</div>
+		<a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=5c3adc941ca876a263c0c227d30c6ca411ee7c9b0df038adb337b47a2de763a4"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="异星幻想2官方群" title="异星幻想2官方群"></a>
 		<br><br>
 		<hr class="bottom">
 
