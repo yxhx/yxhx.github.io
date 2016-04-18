@@ -2,7 +2,6 @@
 title: 异星幻想2官方网站
 email: kf@lesafe.cn
 description: > # this means to ignore newlines until "baseurl:"
-  杭州乐赛孚<br/>
   用心做游戏
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.yxhx2.com" # the base hostname & protocol for your site
