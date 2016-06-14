@@ -46,8 +46,8 @@ id: 3
         </div>
 
         <div class="page-col  page-col-2">
-          <div>程序版本：2.0.000000.60217</div>
-          <div>更新日期：2016/2/17</div>
+          <div>程序版本：2.1.000000.60614</div>
+          <div>更新日期：2016/6/14</div>
           <div>适配系统：Windows XP/Vista/7/8/10</div>
           {% if site.download-url-pc != nil and site.download-url-pc != "" %}
           <a href="{{ site.download-url-pc }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
