@@ -41,6 +41,29 @@ id: 3
     <div class="index-box">
       <div class="page-col-wrapper">           
         <div class="page-col  page-col-1">
+          <img src="/images/ios.png"/>
+          <div class="align-center">苹果版</div>
+        </div>
+
+        <div class="page-col  page-col-2">
+          <div>程序版本：2.1</div>
+          <div>更新日期：2016/7/8</div>
+          <div>适配系统：iOS 6.0 以上</div>
+          {% if site.download-url-ios != nil and site.download-url-ios != "" %}
+          <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
+          {%  else %}
+          <font color="red">暂未开放</font>
+          {% endif %}          
+        </div>
+      </div>
+    </div>
+    <hr class="bottom">
+    <br>
+    
+    <hr class="top">
+    <div class="index-box">
+      <div class="page-col-wrapper">           
+        <div class="page-col  page-col-1">
           <img src="/images/pc.png"/>
           <div class="align-center">微端版</div>
         </div>
@@ -60,29 +83,6 @@ id: 3
     <hr class="bottom">
     <br>
 
-    <hr class="top">
-    <div class="index-box">
-      <div class="page-col-wrapper">           
-        <div class="page-col  page-col-1">
-          <img src="/images/ios.png"/>
-          <div class="align-center">苹果版</div>
-        </div>
-
-        <div class="page-col  page-col-2">
-          <div>程序版本：1.23</div>
-          <div>更新日期：2015/7/16</div>
-          <div>适配系统：iOS 6.0 以上</div>
-          {% if site.download-url-ios != nil and site.download-url-ios != "" %}
-          <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download.png" style="margin: 10px 0px;"></a>
-          {%  else %}
-          <font color="red">暂未开放</font>
-          {% endif %}
-          <font color="red">注意：异星幻想2 苹果版本尚未发布，此版本为老版，用户不同服</font>
-        </div>
-      </div>
-    </div>
-    <hr class="bottom">
-    <br>
 
   </div>
 
