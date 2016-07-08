@@ -6,11 +6,11 @@ layout: default
 
   <div class="index-download"> 
     {% if site.download-url-android != nil and site.download-url-android != "" %}
-    <a href="{{ site.download-url-android }}" target="_blank"><img src="/images/download_android.png"></a>
+    <div id="android_btn"><a href="{{ site.download-url-android }}" target="_blank"><img src="/images/download_android.png"></a></div>
     {% endif %}
 
     {% if site.download-url-ios != nil and site.download-url-ios != "" %}
-    <a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download_ios.png"></a>
+    <div id="ios_btn"><a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download_ios.png"></a></div>
     {% endif %}
 
   </div>
@@ -72,3 +72,23 @@ layout: default
 
 
 </div>
+
+
+<script type="text/javascript">
+	var u = navigator.userAgent;
+	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
+	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+	
+	if(isAndroid) {
+		hideDiv("ios_btn");
+	} else {
+		hideDiv("android_btn");
+	}
+	
+function hideDiv(targetid){
+	if (document.getElementById){
+		target=document.getElementById(targetid);
+		target.style.display="none";
+	}
+}
+</script>
