@@ -6,11 +6,11 @@ layout: default
 
   <div class="index-download"> 
     {% if site.download-url-android != nil and site.download-url-android != "" %}
-    <div id="android_btn"><a href="{{ site.download-url-android }}" target="_blank"><img src="/images/download_android.png"></a></div>
+    <a href="{{ site.download-url-android }}" target="_blank" id="android_btn"><img src="/images/download_android.png"></a>
     {% endif %}
 
     {% if site.download-url-ios != nil and site.download-url-ios != "" %}
-    <div id="ios_btn"><a href="{{ site.download-url-ios }}" target="_blank"><img src="/images/download_ios.png"></a></div>
+    <a href="{{ site.download-url-ios }}" target="_blank" id="ios_btn"><img src="/images/download_ios.png"></a>
     {% endif %}
 
   </div>
