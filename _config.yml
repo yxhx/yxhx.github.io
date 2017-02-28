@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://www.yxhx2.com" # the base hostname & protocol for your site
 
 host: 0.0.0.0
-port: 4000
+port: 3000
 
 # Build settings
 markdown: kramdown
