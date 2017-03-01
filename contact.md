@@ -45,7 +45,7 @@ id: 4
           <div style="color:red;font-weight:bold;">服务号</div>          
           <br>
           <div><b>用途：</b></div>
-          <div>可联系客服或技术人员，处理游戏中的问题或交流反馈游戏问题</div>
+          <div>可联系客服或技术人员，处理游戏中的问题或交流讨论游戏建议</div>
           <br>
           <div><b>工作时间：</b></div>
           <div>周一至周五：10:00 - 16:00, 节假日除外</div>     
