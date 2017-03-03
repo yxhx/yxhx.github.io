@@ -23,7 +23,7 @@ id: 3
         </div>
 
         <div class="page-col  page-col-2">    
-          <div>程序版本：2.1.000000.60614</div>
+          <div>程序版本：2.1.000000.60616</div>
           <div>更新日期：2016/6/14</div>
           <div>适配系统：Android 2.3 以上</div>
           {% if site.download-url-android != nil and site.download-url-android != "" %}
