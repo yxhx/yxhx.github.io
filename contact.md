@@ -8,7 +8,7 @@ id: 4
 <div class="home">
 
   <div class="align-center">
-    <font color="grey">异星幻想微信公众号</font>
+    <font color="grey">异星幻想微信</font>
   </div>
 
   <div class="wrapper">        
@@ -42,7 +42,7 @@ id: 4
         </div>
 
         <div class="page-col  page-col-2">
-          <div style="color:red;font-weight:bold;">订阅号</div>          
+          <div style="color:red;font-weight:bold;">公众订阅号</div>          
           <br>
           <div><b>用途：</b></div>
           <div>接收游戏最新资讯，游戏热点活动通知</div>
@@ -63,7 +63,7 @@ id: 4
         </div>
 
         <div class="page-col  page-col-2">
-          <div style="color:red;font-weight:bold;">服务号</div>          
+          <div style="color:red;font-weight:bold;">公众服务号</div>          
           <br>
           <div><b>用途：</b></div>
           <div>可联系客服或技术人员，处理游戏中的问题或交流讨论游戏建议</div>
