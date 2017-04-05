@@ -14,6 +14,6 @@ markdown: kramdown
 excerpt_separator: <!--more-->
 
 # Download settings
-download-url-pc: "http://file.lesafe.cn/yxhx2.1.zip"
+download-url-pc: ""
 download-url-android: "http://file.lesafe.cn/yxhx2.1.000000.60616.apk"
 download-url-ios: "https://itunes.apple.com/cn/app/%E5%BC%82%E6%98%9F%E5%B9%BB%E6%83%B32/id1115212320?l=zh&mt=8"
