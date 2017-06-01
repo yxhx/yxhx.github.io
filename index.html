@@ -1,94 +1,533 @@
 ---
-layout: default
+layout: default		
 ---
 
-<div class="home">  
 
-  <div class="index-download"> 
-    {% if site.download-url-android != nil and site.download-url-android != "" %}
-    <a href="{{ site.download-url-android }}" target="_blank" id="android_btn"><img src="/images/download_android.png"></a>
-    {% endif %}
 
-    {% if site.download-url-ios != nil and site.download-url-ios != "" %}
-    <a href="{{ site.download-url-ios }}" target="_blank" id="ios_btn"><img src="/images/download_ios.png"></a>
-    {% endif %}
 
-  </div>
+
+   
+    <!-- Intro Section -->
+    <section id="intro">
+    <div class="video-content">  
+    <div class="video-image wp1 delay-1s">
+    	<img src="img/video-img.jpg" alt="">
+    </div>
     
-	<hr/>
-	
-  <div class="align-center">
-    <h1 class="page-heading">最新公告</h1>  
-  </div>
-  <ul class="post-list">
-    {% for post in site.categories.blogs limit:1 %}
-      <li>       
+    <div class="overlay">
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          <span class="post-meta">- {{ post.date | date: "%Y/%m/%d" }}</span>
-        </h2>        
-        <div>
-          {{ post.excerpt }}
+        <div class="container-wrapper">
+           <div class="container">
+            <div class="col-md-12 wp1 delay-05s">
+            
+            <div class="intro-info-wrapper">
+            <h1 class="text-center">异星幻想2  <span class="text-color font-light">永恒纪元</span></h1>
+                <div id="owl-intro" class="owl-carousel owl-theme">
+                    <div class="item">
+                      <div class="clock-wrapper"><div class="clock"></div></div>  
+                    </div>
+                    <div class="item">
+                       <p class="font-similar">始于2017 年 2 月 25 日,  <br> 最纯粹经典的ARPG跨平台游戏</p>
+                    </div>
+                </div>
+            </div>
+        	</div>
+			</div><!-- /.intro-info-wrapper -->
+
+
+            <div class="media-btns buttons">                
+                <a class="btn btn-default about-btn" href="#about">游戏介绍<i class="fa fa-chevron-right"></i></a>
+            </div>
+
         </div>
-        <div style="text-align:right">
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}"> 【阅读全文】</a>
+		</div>
+       
+{% comment %}
+        <div class="video-container">
+            <div id="player"></div>
         </div>
-      </li>
-    {% endfor %}
-  </ul>
+{% endcomment %}        
+        
+        </div>
+        
+        <div class="more page-scroll" id="more">
+            <a href="#blog"><i class="fa fa-angle-down"></i></a>
+        </div>
 
-  <div class="align-center">
-    <h1 class="page-heading">游戏新特色</h1>  
-  </div>
-
-  <div class="footer-col-wrapper">
-    {% for post in site.categories.features reversed %}
-      <div class="footer-col  footer-col-1">
-        <img src="{{post.picture}}">
-        <h3 class="align-center">
-          {{ post.title }}
-        </h3>
-        <span class="post-meta">{{ post.content }}</span>
-      </div>
-    {% endfor %}
-  </div>
-
-  <div class="align-center">
-    <h1 class="page-heading">游戏日志</h1>  
-  </div>
-
-  <ul class="post-list">
-    {% for post in site.categories.blogs limit:6 offset:0 %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}  <span class="post-meta"> - {{ post.date | date: "%Y/%m/%d" }}</span></a>
-        </h2>        
-      </li>
-    {% endfor %}
-  </ul>
+    </section><!-- /#intro --> 
+    
 
 
+    <!-- Blog Section -->
+    <section id="blog">
+    <div class="container"> 
+        <div class="row">      
+        <div class="col-lg-12 wp10 delay-05s">
+        <h1 class="section-title">最新公告<i class="fa fa-bullhorn"></i></h1>
 
+           <div id="owl-blog">
+           	
+               {% for post in site.categories.blogs limit:3 %}                  
+			   <div class="item">
 
-</div>
-
-
-<script type="text/javascript">
-	var u = navigator.userAgent;
-	var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; 
-	var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+               <div class="blog-item blog-item-full">                	
+                    
+                    <div class="blog-item-info">
+                    <span>{{ post.date | date: "%d" }}日</span>
+                    <small>{{ post.date | date: "%Y年 %m 月" }}</small>
+                    <a href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-eye"></i><small>阅读全文</small></a>
+                    </div><!-- /.blog-item-info --> 
+                    
+                    <div class="blog-item-text">
+                    <h3><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt }} </p>
+                    </div><!-- /.blog-item-text --> 
+                    
+                </div>
+                
+           		</div><!-- /.item --> 
+            				      
+		      {% endfor %}
+				
+           </div><!-- /.owl-blog --> 
+              
+    	</div><!-- /.col-lg-12 --> 
+    </div><!-- /.row -->     	    
+	</div><!-- /.container --> 
+	</section><!-- /#blog -->  
 	
-	if(isAndroid) {
-		hideDiv("ios_btn");
-	} else if(isiOS) {
-		hideDiv("android_btn");
-	}
 	
-function hideDiv(targetid){
-	if (document.getElementById){
-		target=document.getElementById(targetid);
-		target.style.display="none";
-	}
-}
+    <!-- About Section -->
+    <section id="about">            
+            
+    <div class="container wp2">
+    <h1 class="section-title">游戏简介</h1>
+ 
+        <div class="row">            
+            
+            <div class="col-lg-5 wp2 delay-1s">  
+            <h2 class="">　　异星幻想 <span class="text-color">2</span></h2>
+            <h4 class="sub-text">发布于:  2016年07月08日 <br>
+                      			 版本: 2.1 <br>
+            </h4>
+			<br>
+			<img src="img/movie-avatar-img.png" alt="">
+
+            <TABLE class="text-dark">
+
+                    <TR><TD>语言 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>中文</TD></TR>
+                    
+                    <TR><TD>开发 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>乐赛孚</TD></TR>
+                    
+                    <TR><TD>题材 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>魔幻</TD></TR>
+                    
+                    <TR><TD>付费 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>免费</TD></TR>
+                    
+                    <TR><TD>类型 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>3D, ARPG, MMO, 角色扮演, 动作游戏, 即时PK</TD></TR>                        
+                    
+                    <TR><TD>内容 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD>频繁/强烈的卡通或幻想暴力</TD></TR>
+                     
+                    <TR><TD>年龄 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD><span class="detailed-text">12+</span></TD></TR> 
+                    
+                    <TR><TD>评分 </TD><TD>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</TD><TD><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></TD></TR>            
+
+            </TABLE>
+            <br>
+
+            
+            <p></p> 
+            </div><!-- /.col-lg-6 -->
+            
+            <div class="col-lg-7 wp2 delay-1s post-content ">  
+            	<p>
+　　国内最早的大型3D魔幻题材MMO-ARPG跨平台网游巨制，千余个PC级3D画质场景，上百个野外地图无限制自由PK；双阵营对峙，四大职业激情打斗，体验近百种华丽职业技能碰撞；星之强者个人PK竞技，争当每周宇宙冠军；特色公会系统，攻城掠地占领游戏地图，掠夺资源建立自己特色公会家园；百人激情倒塔团战，带您体验无尽的游戏激情。
+
+<i class="fa fa-thumbs-up" aria-hidden="true"></i>　英雄诞生：
+　　你将扮演一名星之勇者，对抗邪灵，除恶扬善，为阵营带来和平与财富。
+<i class="fa fa-user" aria-hidden="true"></i>　英雄成长：
+　　潜能加点：人物升级可获得潜能点，影响力量，敏捷，智力，体能，意志五大属性
+　　技能学习：随角色等级成长学习职业特色技能，让你的攻击更具威力
+　　装备打造：你可以在打造师处打造属于自己的专属装备
+　　装备精练：你可以在改造师处将装备升到更高的品质，让自己的英雄更强大
+　　装备强化：强化后的装备，可获得额外属性加成及炫目的特效
+　　装备升级：装备可随角色等级共同成长，不断提升获得巨大的战斗力
+<i class="fa fa-users" aria-hidden="true"></i>　英雄联盟：
+　　公会家园：加入公会，建造属于自己的公会家园
+　　家园战争：攻占敌对公会家园，恣意杀掠
+　　公会战：激情的DOTA型公会大战，纵横驰骋，饮血沙场
+　　攻城略地：王者之战终极征途，将每一寸土地纳入麾下，成就绝世霸业
+<i class="fa fa-university" aria-hidden="true"></i>　英雄世界：
+　　野外地图：上百张野外地图，手机版魔兽世界，无限制自由野外PK
+　　副本地图：特色副本地图，和你的团队共同推倒BOSS
+<i class="fa fa-pagelines" aria-hidden="true"></i>　英雄霸业：
+　　星之强者：每周星之强者个人比武大会，成为宇宙第一
+　　浴血勇士：杀死敌方阵营玩家积累战功，成就一方霸业
+
+
+            	</p>
+            	<br><br><br>
+            	
+
+            </div>
+    	</div><!-- /.row -->
+    </div><!-- /.container --> 
+    </section><!-- /#about -->     
+
+
+  <!-- Features Section -->
+  <section id="features">
+  <div class="container">
+  <div class="row">
+	        
+                    
+			<div id="expand-counters" class="col-md-6 features wp4">
+				<h2 class="sub-title">当前职业人数分布</h2>
+				<ul class="features-wrap">
+					<li>
+						<h6 class="text-center">巫灵使者</h6>
+						<div><span class="expand expand-1"><em><b id="expand-counter-1"></b>%</em></span></div>
+					</li>
+					<li>
+						<h6 class="text-center">狂武战士</h6>
+						<div><span class="expand expand-2"><em><b id="expand-counter-2"></b>%</em></span></div>
+					</li>
+					<li>
+						<h6 class="text-center">圣魔剑士</h6>
+						<div><span class="expand expand-3"><em><b id="expand-counter-3"></b>%</em></span></div>
+					</li>
+					<li>
+						<h6 class="text-center">暗影枪手</h6>
+						<div><span class="expand expand-4"><em><b id="expand-counter-4"></b>%</em></span></div>
+					</li>
+				</ul>
+			</div>
+        
+        
+        
+			<div class="col-md-6 wp4 delay-05s">
+
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                          <span class="glyphicon glyphicon-minus"></span>
+                          高手排行
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                      <table>
+                      	{% for rank in site.data.rank5 %}
+                      	<tr><td width="80%">{{ rank.roleName }}</td><td width="100px">{{ rank.level }}级</td></tr>
+                      	{% endfor %}
+                      </table>	                      	
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                          <span class="glyphicon glyphicon-plus"></span>
+                          财富排行
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">
+                      <table>
+                      	{% for rank in site.data.rank1 %}
+                      	<tr><td width="80%">{{ rank.roleName }}</td><td width="100px">{{ rank.level }}级</td></tr>
+                      	{% endfor %}
+                      </table>	
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                          <span class="glyphicon glyphicon-plus"></span>
+                          荣誉排行
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">
+                      	<table>
+	                      	{% for rank in site.data.rank4 %}
+	                      	<tr><td width="80%">{{ rank.roleName }}</td><td width="100px">{{ rank.level }}级</td></tr>
+	                      	{% endfor %}
+                    	</table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+			</div>
+            
+            
+            
+            
+            
+            
+
+		</div>
+        </div><!-- /.container --> 
+  </section><!--/.features -->
+  
+  
+    <!-- Actors Section -->
+    <section id="actors">
+    <div class="container"> 
+        <div class="row">      
+        <div class="col-lg-12">
+		<h1 class="section-title">游戏特色</h1>
+        
+			<div id="owl-actors" class="owl-carousel owl-theme">
+				
+				<div class="item" >
+					<div class="col-md-12 wp6">
+						
+								<div class="actor">
+									<div class="avatar">
+                                    	<img alt="img" src="img/features/01.png">
+                                    </div>
+									
+									<div class="details">
+                                    	<img alt="img" src="img/features/01.png">    
+									</div>
+  								</div><!-- /.actor -->                                  
+                                <div class="actor-info">
+                                <h4 class="heading">坐骑与宠物完美融合</h4>
+                                <h5 class="sub-heading">
+                                从5级开始就可以领养战兽，它可以帮助角色加血蓝，学习技能后更能进行辅助战斗，有它的陪伴再寂寞的升级路也不会孤单。
+                                </h5>
+                                </div> <!-- /.actor-info -->        
+					</div>
+				</div><!-- /.item -->
+			
+				<div class="item" >
+					<div class="col-md-12 wp6 delay-05s">
+						
+								<div class="actor">
+									<div class="avatar">
+                                    <img alt="img" src="img/features/02.png">
+                                    </div>
+									
+									<div class="details">
+                                    	<img alt="img" src="img/features/02.png">     
+									</div>
+  								</div><!-- /.actor -->                                  
+                                <div class="actor-info">
+                                <h4 class="heading">丰富的副本资源</h4>
+                                <h5 class="sub-heading">
+                                从15级开始每5级都有一个副本，既可单人作战也可组队对抗，全程可使用机器人辅助战斗，摆脱枯燥的日常刷本任务，尽情体验成长的愉悦。
+                                </h5>
+                                </div> <!-- /.actor-info -->        
+					</div>
+				</div><!-- /.item -->
+                
+                
+                <div class="item" >
+					<div class="col-md-12 wp6 delay-1s">
+						
+								<div class="actor">
+									<div class="avatar">
+                                    <img alt="img" src="img/features/03.png">
+                                    </div>
+									
+									<div class="details">
+                                    	<img alt="img" src="img/features/03.png">     
+									</div>
+  								</div><!-- /.actor -->                                  
+                                <div class="actor-info">
+                                <h4 class="heading">极致的自由PK体验</h4>
+                                <h5 class="sub-heading">
+                                对立阵营的玩家在所有公共野外地图和主城都可任意PK，既可在挂机时获得高额的经验和金币回报，又可体验阵营间为争夺资源而进行无穷无尽的激烈对抗。
+                                </h5>
+                                </div> <!-- /.actor-info -->        
+					</div>
+				</div><!-- /.item -->
+                
+                <div class="item" >
+					<div class="col-md-12">
+						
+								<div class="actor">
+									<div class="avatar">
+                                    <img alt="img" src="img/features/04.png">
+                                    </div>
+									
+									<div class="details">
+                                    	<img alt="img" src="img/features/04.png">
+									</div>
+  								</div><!-- /.actor -->                                  
+                                <div class="actor-info">
+                                <h4 class="heading">超炫的无锁定战斗和华丽技能</h4>
+                                <h5 class="sub-heading">
+                                全职业角色战斗无锁定，丰富的战斗技能需要灵活的操作和全身心投入，让您真正体验到身临其境的战斗氛围和如电流般贯穿全身的击杀快感。
+                                </h5>
+                                </div> <!-- /.actor-info -->        
+					</div>
+				</div><!-- /.item -->            
+				</div>
+		</div><!-- /.col-lg-12 -->        
+		</div><!-- /.row -->  
+        </div><!-- /.container --> 
+        
+        <!-- Advantages -->
+        <div class="advantages">
+		
+        
+        <div class="section-sub-title">
+			更多的特色玩法
+		</div>
+        <div class="colored-line"></div>
+        
+        <div class="container">     
+        <div class="col-md-3 advantages-item wp7">
+            <div class="advantages-item-icon"><i class="fa fa-star-o"></i></div>
+            <h3>游戏介绍</h3>           
+			    {% for post in site.categories.arts_1 %}
+			    <div>   
+			        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			     </div>        
+			    {% endfor %}		
+  		</div><!-- /.col-md-3 -->   	
+        
+        <div class="col-md-3 advantages-item wp7">
+            <div class="advantages-item-icon"><i class="fa fa-flag-o"></i></div>
+            <h3>特色系统</h3>
+		    {% for post in site.categories.arts_2 %}
+		    <div>   
+		        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		     </div>        
+		    {% endfor %}
+  		</div><!-- /.col-md-3 -->   
+        
+        <div class="col-md-3 advantages-item wp7">
+            <div class="advantages-item-icon"><i class="fa fa-thumbs-o-up"></i></div>
+            <h3>游戏玩法</h3>
+		    {% for post in site.categories.arts_3 %}
+		    <div>   
+		        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		     </div>        
+		    {% endfor %} 
+  		</div><!-- /.col-md-3 -->       		
+  		
+        <div class="col-md-3 advantages-item wp7">
+            <div class="advantages-item-icon"><i class="fa fa-calendar"></i></div>
+            <h3>游戏活动</h3>
+		    {% for post in site.categories.arts_4 %}
+		    <div>   
+		        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+		     </div>        
+		    {% endfor %} 
+  		</div><!-- /.col-md-3 -->        
+       </div><!-- /.advantages -->  
+ 
+    </div><!-- /.container --> 
+	</section><!-- /#actors --> 
+    
+    
+
+
+
+	<!-- Downloads Section -->
+    <section id="downloads">
+    <div class="overlay"></div>
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-12 wp10">
+            	<h1 class="section-title">游戏下载</h1>
+
+                <ul class="social-buttons">                	
+                    <li>
+                    	{% if site.download-url-ios != nil and site.download-url-ios != "" %}
+                    	<a href="{{ site.download-url-ios }}" target="_blank"><i class="fa fa-apple fa-fw"></i> <span>苹果</span></a>
+                    	<div>最新版本：2.1.1.0.60616</div>
+	            	    {% else %}
+	            	    <font color="red">暂未开放</font>
+	            	    {% endif %}
+                    </li>
+                    <li>
+                    	{% if site.download-url-android != nil and site.download-url-android != "" %}
+                    	<a href="{{ site.download-url-android }}" target="_blank"><i class="fa fa-android fa-fw"></i> <span>安卓</span></a>
+                    	<div>最新版本：2.1.0.0.60616</div>
+                    	{% else %}
+	            	    <font color="red">暂未开放</font>
+	            	    {% endif %}
+                    </li>
+                    <li>
+                    	{% if site.download-url-pc != nil and site.download-url-pc != "" %}
+                    	<a href="{{ site.download-url-pc }}" target="_blank"><i class="fa fa-windows fa-fw"></i> <span>Windows</span></a>
+                    	<div>最新版本：2.1.2.0.60616</div>
+                    	{% else %}
+	            	    <font color="red">暂未开放</font>
+	            	    {% endif %}
+                    </li>                    
+                </ul>
+                
+            </div><!-- /.col-lg-12 --> 
+            
+        </div><!-- /.row --> 
+        <div class="row">
+        
+        <div class="copyright">
+        {{ site.description }}
+       	<br>
+        2012 - 2017 Year
+        </div>
+        <div class="footer-line"></div>
+        </div><!-- /.row --> 
+    </div><!-- /.container -->     	  
+    </section><!-- /#downloads --> 
+
+
+    <!-- Core JavaScript Files -->
+    <script src="{{ "/js/jquery-1.10.2.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
+
+    <!-- JavaScript -->
+    <script src="{{ "/js/lib/jquery.appear.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/lib/owl-carousel/owl.carousel.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/lib/magnific-popup/jquery.magnific-popup.min.js" | prepend: site.baseurl }}"></script> 		
+    <script src="{{ "/js/lib/flipclock/flipclock.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/lib/jquery.animateNumber.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/lib/waypoints.min.js" | prepend: site.baseurl }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
+
+
+<script>
+
+jQuery(document).ready(function($) {
+	"use strict";
+	$('#counters').appear(function() {
+	$('#counter-1').animateNumber({ number: 1024 }, 2000 );
+	$('#counter-2').animateNumber({ number: 2360 }, 2000 );
+	$('#counter-3').animateNumber({ number: 1586 }, 2000 );
+	},{accX: 0, accY: -200});
+});
+
+{% for r in site.data.roles %}
+	$('#expand-counters').appear(function() {
+	$('#expand-counter-1').animateNumber({ number: {{r.type2 | times:100 | divided_by: r.total}} }, 3000 );
+	$('#expand-counter-2').animateNumber({ number: {{r.type3 | times:100 | divided_by: r.total}} }, 3000 );
+	$('#expand-counter-3').animateNumber({ number: {{r.type4 | times:100 | divided_by: r.total}} }, 3000 );
+	$('#expand-counter-4').animateNumber({ number: {{r.type5 | times:100 | divided_by: r.total}} }, 3000 );
+	},{accX: 0, accY: -200});
+
+
+	$('.features-wrap').appear(function() {
+	$('.expand-1').css('width', '{{ r.type2 | times:100 | divided_by: r.total }}%');
+	$('.expand-2').css('width', '{{ r.type3 | times:100 | divided_by: r.total }}%');
+	$('.expand-3').css('width', '{{ r.type4 | times:100 | divided_by: r.total }}%');
+	$('.expand-4').css('width', '{{ r.type5 | times:100 | divided_by: r.total }}%');
+	},{accX: 0, accY: -70});
+{% endfor %}
 </script>

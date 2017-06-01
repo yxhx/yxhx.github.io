@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: blog		
+---
 
-  {% include head.html %}
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
 
 	<!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top wp1" role="navigation">
@@ -12,7 +12,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/index.html">
+                <a class="navbar-brand" href="index.html">
                     <i class="fa fa-gamepad"></i> 异星幻想 <span class="font-light"> 2</span>
                 </a>
             </div>
@@ -45,50 +45,31 @@
         </div>
         <!-- /.container -->
     </nav>
+       
+	<br>
 
-    
     <!-- Blog Section -->
     <section id="blog">
     <div class="container"> 
         <div class="row">      
         <div class="col-lg-9 wp2 delay-05s">
-				
+			{% for post in site.categories.blogs %}				
+                <!-- 01 -->
+                <div class="blog-item blog-item-full">                
+                <div class="blog-item-info page-scroll">
+                <span>{{ post.date | date: "%d" }}日</span>
+                <small>{{ post.date | date: "%Y年 %m 月" }}</small>
+                <a href="blog-page.html"><i class="fa fa-eye"></i><small></small></a>
+                </div><!-- /.blog-item-info --> 
                 
-                	<a href="/blog.html" class="back-to-main"><i class="fa fa-chevron-left"></i> &nbsp; 查看全部公告 </a>
-                
-                
-                	<!-- 01 -->
-                    <div class="blog-item blog-item-full">
-                	
-                    <div class="blog-item-info page-scroll">
-                    <span>{{ page.date | date: "%d" }}日</span>
-                    <small>{{ page.date | date: "%Y年 %m 月" }}</small>
-                    <a href="#"><i class="fa fa-eye"></i><small></small></a>
-                    </div><!-- /.blog-item-info --> 
-                    
-                    <div class="blog-item-text">
-                    <h3>{{ page.title }}</h3>
-					      
-                    <ul class="blog-informers">                         
-                         <li><i class="fa fa-user"></i><a href="#">管理员</a></li>
-                         <li><i class="fa fa-eye"></i>0</li>
-                         <li><i class="fa fa-heart"></i>0</li>
-                    </ul>
-                    
-                    </div><!-- /.blog-item-text --> 
-                	</div><!-- blog-item -->
-					<hr>
-					<!-- Content -->
-					
-                    <article>
-				  	{% if page.picture %}
-				  	<div class="align-center">
-						<img src="{{page.picture}}">
-					</div>
-					{% endif %}
-				    {{ content }}
-				    </article>               
-                    
+                <div class="blog-item-text">
+                <h3><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h3>                
+                <p>{{post.excerpt }}</p>
+                </div><!-- /.blog-item-text --> 
+                </div><!-- blog-item -->
+                <hr>
+			{% endfor %}                      
+       
 
     	</div><!-- /.col-lg-8 --> 
         
@@ -103,8 +84,7 @@
                                   <input class="search-line" name="search" type="text" placeholder="Search">
                               </form>
           </div>
-          <!-- Search -->
-  
+
           
           <!-- Recent Posts -->  
           <div class="sidebar-widget">
@@ -119,21 +99,16 @@
 
               </ul>
           </div>
-          <!-- Recent Posts --> 
- 
 
-
-
-          <!-- Sidebar- Tabs -->
           
       </div> <!-- /sidebar-->
         
     </div><!-- /.row -->     	    
 	</div><!-- /.container --> 
 	</section><!-- /#blog -->  
-
-
-    <!-- Core JavaScript Files -->
+	
+	
+	<!-- Core JavaScript Files -->
     <script src="{{ "/js/jquery-1.10.2.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
@@ -150,6 +125,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
-</body>
 
-</html>
+
+
