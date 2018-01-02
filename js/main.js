@@ -246,18 +246,20 @@ var clock;
 
 
 	// Grab the current date
-	var currentDate = new Date();
+	//var currentDate = new Date();
 
 	// Set some date in the future. In this case, it's always Jan 1
 
-	var startDate  = new Date(2017, 1, 25, 12, 0, 0);
-
+	//var startDate  = new Date(2017, 1, 25, 12, 0, 0);
+	
 	// Calculate the difference in seconds between the future and current date
-	var diff = currentDate.getTime() / 1000 - startDate.getTime() / 1000;
+	//var diff = currentDate.getTime() / 1000 - startDate.getTime() / 1000;
 
+	var end_date = new Date(2017, 12,31,23,59,59);
 	// Instantiate a coutdown FlipClock
-	clock = $('.clock').FlipClock(diff, {
-		clockFace: 'DailyCounter'
+	clock = $('.clock').FlipClock(end_date, {
+		autoStart: false,
+		clockFace: 'TwentyFourHourClock'
 	});
 
 
