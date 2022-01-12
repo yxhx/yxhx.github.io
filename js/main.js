@@ -261,7 +261,7 @@ var clock;
 	//	autoStart: false,
 	//	clockFace: 'TwentyFourHourClock'
 	//});
-	clock = $('.clock').FlipClock(end_date, {		
+	clock = $('.clock').FlipClock({		
 		clockFace: 'DailyCounter'
 	});
 
