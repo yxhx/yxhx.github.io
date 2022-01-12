@@ -255,11 +255,14 @@ var clock;
 	// Calculate the difference in seconds between the future and current date
 	//var diff = currentDate.getTime() / 1000 - startDate.getTime() / 1000;
 
-	var end_date = new Date(2017, 12,31,23,59,59);
+	// var end_date = new Date(2017, 12,31,23,59,59);
 	// Instantiate a coutdown FlipClock
-	clock = $('.clock').FlipClock(end_date, {
-		autoStart: false,
-		clockFace: 'TwentyFourHourClock'
+	//clock = $('.clock').FlipClock(end_date, {
+	//	autoStart: false,
+	//	clockFace: 'TwentyFourHourClock'
+	//});
+	clock = $('.clock').FlipClock(end_date, {		
+		clockFace: 'DailyCounter'
 	});
 
 
